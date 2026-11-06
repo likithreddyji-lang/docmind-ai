@@ -1,0 +1,3 @@
+# Docker Compose is not required for local Windows development.
+# MySQL runs natively on localhost:3306.
+# This file is kept for reference only.

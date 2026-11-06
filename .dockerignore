@@ -1,0 +1,15 @@
+.git
+.gitignore
+target/
+frontend/
+node_modules/
+.idea/
+*.iml
+*.log
+.env
+.env.*
+sample.pdf
+Dockerfile
+.dockerignore
+README.md
+
