@@ -22,6 +22,8 @@ public class CorsConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         String[] allowedOrigins = Arrays.stream(appProperties.getCors().getAllowedOrigins().split(","))
                 .map(String::trim)
+                .map(s -> s.replaceAll("/+$", ""))
+                .filter(s -> !s.isEmpty())
                 .toArray(String[]::new);
         String[] allowedMethods = Arrays.stream(appProperties.getCors().getAllowedMethods().split(","))
                 .map(String::trim)
@@ -43,6 +45,7 @@ public class CorsConfig implements WebMvcConfigurer {
         CorsConfiguration configuration = new CorsConfiguration();
         List<String> allowedOrigins = Arrays.stream(appProperties.getCors().getAllowedOrigins().split(","))
                 .map(String::trim)
+                .map(s -> s.replaceAll("/+$", ""))
                 .filter(s -> !s.isEmpty())
                 .toList();
         configuration.setAllowedOriginPatterns(allowedOrigins);

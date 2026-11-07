@@ -32,6 +32,7 @@ public class User {
     @Column(unique = true,nullable = false)
     private  String email;
 
+    @Builder.Default
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,orphanRemoval = true)
     private Set<DocumentMetadata> documentMetadataSet=new LinkedHashSet<>();
 

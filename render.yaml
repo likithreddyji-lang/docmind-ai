@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: docmind-backend
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /health
+    envVars:
+      - key: DB_URL
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+      - key: GEMINI_CHAT_MODEL
+        sync: false
+      - key: GEMINI_EMBEDDING_MODEL
+        sync: false
+

@@ -42,6 +42,7 @@ public class SecurityConfig {
                                 auth
                                         .dispatcherTypeMatchers(jakarta.servlet.DispatcherType.ASYNC, jakarta.servlet.DispatcherType.FORWARD).permitAll()
                                         .requestMatchers(
+                                                "/health",
                                                 "/api/v1/auth/**",
                                                 "/v3/api-docs/**",
                                                 "/swagger-ui/**",
